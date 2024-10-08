@@ -22,7 +22,7 @@ class BigBall:
         self.x, self.y = random.randint(41,800-41), 599
         self.image = load_image('ball41x41.png')
     def update(self):
-        self.y -= random.randint(5,15)
+        self.y -= random.randint(1,20)
         if self.y < 30+ 41:
             self.y = 30+ 41
 
@@ -33,9 +33,9 @@ class SmallBall:
         self.x, self.y = random.randint(21,800-21), 599
         self.image = load_image('ball21x21.png')
     def update(self):
-        self.y -= random.randint(5,15)
-        if self.y < 30+ 21:
-            self.y = 30+ 21
+        self.y -= random.randint(1,15)
+        if self.y < 30+ 21 + 10:
+            self.y = 30+ 21 + 10
     def draw(self):
         self.image.clip_draw(0, 0, 100, 100, self.x, self.y,21,21)
 def handle_events():
